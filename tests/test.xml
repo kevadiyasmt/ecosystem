@@ -1,0 +1,62 @@
+<customers xmlns:home="home" xmlns:work="work" xmlns:other="other" xmlns:h="h">
+    <!-- this is a comment-->
+    <?HOWTO type="simple" use="single only"?>
+    <customer id="55000" xmlns="www.xmlns.com">
+        <name>Charter Group</name>
+        <home:address>
+            <h:street>100 Main<!-- this is a comment inside nested element--></h:street>
+            <h:city>Framingham</h:city>
+            <h:state>MA</h:state>
+            <h:zip>01701</h:zip>
+        </home:address>
+        <work:address>
+            <street>720 Prospect</street>
+            <city>Framingham</city>
+            <state>MA</state>
+            <zip>01701</zip>
+            <findthis>nested content to be found</findthis>
+        </work:address>
+        <other:address>
+            <street>120 Ridge</street>
+            <state>MA</state>
+            <zip>01760</zip>
+        </other:address>
+        <cdexample1>
+            hello
+        <![CDATA[I can use all sorts of reserved characters section 1]]>
+        </cdexample1>
+        <cdexample2>
+            <![CDATA[I can use all sorts of reserved characters]]>
+            hello
+        </cdexample2>
+        <findthis>content to be found</findthis>
+        <findthis>content to be found</findthis>
+        <findthis>content to be found</findthis>
+        <findthis>content to be found</findthis>
+    </customer>
+    <customer id="65000" dummy="1" xmlns="www.xmlns.com">
+        <name>XOLO Group</name>
+        <home:address>
+            <h:street>11 st</h:street>
+            <h:city>newyork</h:city>
+            <h:state>NY</h:state>
+            <h:zip>10001</h:zip>
+        </home:address>
+        <cdexample1>
+            <![CDATA[I can use all sorts of reserved characters section 1]]>
+        </cdexample1>
+    </customer>
+    <dummy>
+        <customers>
+            <data>this is a nested customers element inside dummy element</data>
+        </customers>
+        <customer>
+            <data>this is a nested customer element inside dummy element</data>
+            <name>HALO GROUP</name>
+            <name>MARKUS INC</name>
+        </customer>
+    </dummy>
+    <customers>
+        <data>this is a nested customers element inside another customers element</data>
+    </customers>
+</customers>
