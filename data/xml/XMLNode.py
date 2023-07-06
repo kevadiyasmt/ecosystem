@@ -124,7 +124,9 @@ class XMLNode:
                 f"Cannot set {item}, value must be an instance of either of (XMLNode, CommentNode, ProcessingInstructionNode,CDATANode).")
         if item >= len(self.children):
             raise IndexError(f"Cannot set {item}, index out of range.")
-
+        if self.is_anscestor(value):
+            raise ValueError(
+                "Circular reference: The given child element is already an ancestor.")
         self.children[item] = value
 
     def __setitem__(self, item: str, value: str):
@@ -149,6 +151,23 @@ class XMLNode:
         self.attributes = {}
         self.children = []
         self.parent = None
+
+    def is_anscestor(self, other):
+        """
+        Check if the current XMLNode is an ancestor of the given XMLNode.
+
+        Parameters:
+            other (XMLNode): The XMLNode to check.
+
+        Returns:
+            bool: True if the current XMLNode is an ancestor of the given XMLNode, False otherwise.
+        """
+        parent = other.parent
+        while parent:
+            if parent == self:
+                return True
+            parent = parent.parent
+        return False
 
     def from_node(self, node):
         """
@@ -263,6 +282,9 @@ class XMLNode:
         :type child: Any
         :return: None
         """
+        if self.is_anscestor(child):
+            raise ValueError(
+                "Circular reference: The given child element is already an ancestor.")
         child.parent = self
         self.children.append(child)
 
