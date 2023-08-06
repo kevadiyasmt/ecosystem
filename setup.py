@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 # Same content as provided in the previous setup.py example
 
 setup(
-    name="ecosystem",
+    name="pyecosystem",
     version="0.0.1",
     author="Smeet Kevadiya",
     author_email="",
