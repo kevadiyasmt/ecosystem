@@ -5,10 +5,10 @@ from setuptools import setup, find_packages
 setup(
     name="ecosystem",
     version="0.0.1",
-    author="Kevadiya Smeet",
+    author="Smeet Kevadiya",
     author_email="",
-    description="an ecosystem of various data transformers, structure builders, manipulators",
-    long_description="an ecosystem of various data transformers, structure builders, manipulators",
+    description="an ecosystem of various data transformers, structure builders, manipulators, workflows",
+    long_description="an ecosystem of various data transformers, structure builders, manipulators, workflows",
     long_description_content_type="text/markdown",
     url="https://github.com/kevadiyasmt/ecosystem",
     packages=find_packages(),
@@ -20,5 +20,5 @@ setup(
     install_requires=[
         # List any dependencies here
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.7",
 )
