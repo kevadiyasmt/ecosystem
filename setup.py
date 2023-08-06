@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pyecosystem",
-    version="0.0.1",
+    version="0.0.2",
     author="Smeet Kevadiya",
     author_email="",
     description="an ecosystem of various data transformers, structure builders, manipulators, workflows",
